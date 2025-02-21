@@ -1,0 +1,103 @@
+.copy-btn {
+    position: relative;
+    display: inline-block;
+
+    /* Отступы внутри элемента */
+    --copy-btn-padding-horizontal: 10px;
+    /* Горизонтальный отступ слева и справа от текста */
+    --copy-btn-padding-right: 30px;
+    /* Увеличенный правый отступ для места под иконку */
+    --copy-btn-padding-vertical: 10px;
+    /* Вертикальный отступ сверху и снизу */
+
+    /* Свойства границы */
+    --copy-btn-border-width: 1px;
+    /* Толщина границы */
+    --copy-btn-border-color: #ccc;
+    /* Цвет границы */
+
+    /* Отступы снаружи элемента */
+    --copy-btn-margin: 10px;
+    /* Внешний отступ со всех сторон */
+
+    /* Цвет фона */
+    --copy-btn-background-color: #f9f9f9;
+    /* Цвет фона элемента */
+
+    padding: var(--copy-btn-padding-vertical) var(--copy-btn-padding-right) var(--copy-btn-padding-vertical) var(--copy-btn-padding-horizontal);
+    /* border: var(--copy-btn-border-width) solid var(--copy-btn-border-color); */
+    /* background: var(--copy-btn-background-color); */
+    margin: var(--copy-btn-margin);
+}
+
+.copy-btn .copy-icon {
+    position: absolute;
+
+    /* Позиционирование иконки */
+    --copy-btn-icon-right: 5px;
+    /* Отступ справа от края элемента */
+    --copy-btn-icon-size: 16px;
+    /* Размер шрифта иконки */
+    --copy-btn-icon-padding: 5px;
+    /* Внутренний отступ иконки для увеличения кликабельной области */
+
+    right: var(--copy-btn-icon-right);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--copy-btn-icon-size);
+    cursor: pointer;
+    padding: var(--copy-btn-icon-padding);
+
+    opacity: 0.7;
+}
+
+.copy-btn .copy-icon:hover {
+    /* Цвет при наведении на иконку */
+    --copy-btn-icon-hover-color: #007bff;
+    /* Цвет иконки при наведении */
+
+    color: var(--copy-btn-icon-hover-color);
+
+    opacity: 1;
+}
+
+.copy-btn .tooltip {
+    position: absolute;
+
+    /* Свойства tooltip */
+    --copy-btn-tooltip-padding-horizontal: 7px;
+    /* Горизонтальный отступ внутри tooltip */
+    --copy-btn-tooltip-padding-vertical: 4px;
+    /* Вертикальный отступ внутри tooltip */
+    --copy-btn-tooltip-font-size: 12px;
+    /* Размер шрифта tooltip */
+    --copy-btn-tooltip-background: #333;
+    /* Цвет фона tooltip */
+    --copy-btn-tooltip-color: #fff;
+    /* Цвет текста tooltip */
+    --copy-btn-tooltip-offset: 10px;
+    /* Расстояние от элемента до tooltip сверху или снизу */
+
+    right: 0;
+    background: var(--copy-btn-tooltip-background);
+    color: var(--copy-btn-tooltip-color);
+    padding: var(--copy-btn-tooltip-padding-vertical) var(--copy-btn-tooltip-padding-horizontal);
+    border-radius: 3px;
+    /* Оставил фиксированное значение, так как это форма, а не размер */
+    font-size: var(--copy-btn-tooltip-font-size);
+    display: none;
+}
+
+.copy-btn .tooltip.top {
+    top: calc(var(--copy-btn-tooltip-offset) * -1);
+    /* Отрицательное значение для позиции сверху */
+}
+
+.copy-btn .tooltip.bottom {
+    bottom: calc(var(--copy-btn-tooltip-offset) * -1);
+    /* Отрицательное значение для позиции снизу */
+}
+
+.copy-btn .tooltip.show {
+    display: block;
+}
