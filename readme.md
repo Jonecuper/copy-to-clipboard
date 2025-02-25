@@ -31,3 +31,8 @@
    ```html
    <div class="copy-btn">Текст для копирования</div>
    ```
+2. Добавьте класс `copy-btn` и атрибут `data-copy` к любому элементу, для копирования будет использована информация из атрибута `data-copy`:
+   ```html
+   <a class="copy-btn" href="https://example.com" target="_blank" data-copy="https://example.com" rel="noopener noreferrer">Ссылка</a>
+   ```
+

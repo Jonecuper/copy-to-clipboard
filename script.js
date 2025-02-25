@@ -10,9 +10,10 @@ document.querySelectorAll('.copy-btn').forEach((element) => {
   element.appendChild(tooltip);
 
   icon.addEventListener('click', function (e) {
+    e.preventDefault();
     e.stopPropagation();
-
-    const textToCopy = this.parentElement.childNodes[0].textContent.trim();
+ 
+    const textToCopy =  this.parentElement.dataset.copy !== undefined ? this.parentElement.dataset.copy : this.parentElement.childNodes[0].textContent.trim();
     const tooltip = this.nextElementSibling;
 
     const rect = element.getBoundingClientRect();
